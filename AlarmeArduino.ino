@@ -19,8 +19,8 @@ void setup()
 	lcd.backlight();
 	lcd.setCursor(1,0);
 	lcd.print("Alarme ARDUINO");
-	lcd.setCursor(6,1);
-	lcd.print("v0.1");
+	lcd.setCursor(3,1);
+	lcd.print("Start v0.1");
 }
 
 void loop()
@@ -68,30 +68,30 @@ void loop()
 
 		for(int i = 0; i < 16; i++)
 		{
-		lcd.setCursor(i,0);
-		lcd.print("*");
-		delay(delaisArmement / 60);
+			lcd.setCursor(i,0);
+			lcd.print("*");
+			delay(delaisArmement / 60);
 		}
 
 		for(int i = 0; i < 16; i++)
 		{
-		lcd.setCursor(i,1);
-		lcd.print("*");
-		delay(delaisArmement / 60);
+			lcd.setCursor(i,1);
+			lcd.print("*");
+			delay(delaisArmement / 60);
 		}
 
 		for(int i = 0; i < 16; i++)
 		{
-		lcd.setCursor(i,0);
-		lcd.print(" ");
-		delay(delaisArmement / 60);
+			lcd.setCursor(i,0);
+			lcd.print(" ");
+			delay(delaisArmement / 60);
 		}
 
 		for(int i = 0; i < 16; i++)
 		{
-		lcd.setCursor(i,1);
-		lcd.print(" ");
-		delay(delaisArmement / 60);
+			lcd.setCursor(i,1);
+			lcd.print(" ");
+			delay(delaisArmement / 60);
 		}
 
 		// ---------------------------------Fin de la temporisation d'allumage--------------------------------------------------------
