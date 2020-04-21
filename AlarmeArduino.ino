@@ -5,8 +5,9 @@ LiquidCrystal_I2C lcd(0x27,20,4);  // 0x27 pour LCD 16*2 caractères
 
 int etatAlarme = 0; // variable qui enregistre l'état de l'alarme
 int etatBouton = 0; // variable qui enregistre l'état du bouton
-const int relais = 13; // le relais est connecté à la broche X de la carte Adruino
+const int relais = 7; // le relais est connecté à la broche X de la carte Adruino
 const int bouton = 4; // le bouton est connecté à la broche 4 de la carte Adruino
+const int delaisArmement = 10000; // Délais avant armement de l'alarme en milisecondes
 
 void setup()
 {
@@ -30,12 +31,23 @@ void loop()
     	{
 		lcd.backlight();
 		etatAlarme++;
-		delay(1500);
-		lcd.setCursor(0,1);
-		lcd.print("OFF");
+		//delay(1100); // Délais pour avoir le temps de voir l'affichage précédent si lcd.nobacklight();
+		lcd.clear();
+		lcd.setCursor(0,0);
+		lcd.print("Arret du systeme");
 		digitalWrite(relais, LOW);
-		delay(10000);
-		lcd.noBacklight();
+		delay(3000);
+		lcd.clear();
+		lcd.setCursor(4,0);
+		lcd.print("Arret OK");
+		delay(3000);
+		lcd.clear();
+		lcd.setCursor(1,0);
+		lcd.print("Alarme ARDUINO");;
+		lcd.setCursor(6,1);
+		lcd.print("v0.1");
+		//delay(10000);
+		//lcd.noBacklight();
 	}
 
 	else 
@@ -44,12 +56,61 @@ void loop()
 		{
 		lcd.backlight(); 
 		etatAlarme--;
-		delay(1500);
+		//delay(1100); // Délais pour avoir le temps de voir l'affichage précédent si lcd.nobacklight();
+
+		// ---------------------------------Début de la temporisation d'allumage--------------------------------------------------------
+
+		lcd.clear();
+		lcd.setCursor(0,0);
+		lcd.print("   Armement du");
 		lcd.setCursor(0,1);
-		lcd.print("ON ");
-		delay(10000);
+		lcd.print("     systeme");
+		delay(2000);
+
+		for(int i = 0; i < 16; i++)
+		{
+		lcd.setCursor(i,0);
+		lcd.print("*");
+		delay(delaisArmement / 60);
+		}
+
+		for(int i = 0; i < 16; i++)
+		{
+		lcd.setCursor(i,1);
+		lcd.print("*");
+		delay(delaisArmement / 60);
+		}
+
+		for(int i = 0; i < 16; i++)
+		{
+		lcd.setCursor(i,0);
+		lcd.print(" ");
+		delay(delaisArmement / 60);
+		}
+
+		for(int i = 0; i < 16; i++)
+		{
+		lcd.setCursor(i,1);
+		lcd.print(" ");
+		delay(delaisArmement / 60);
+		}
+
+		// ---------------------------------Fin de la temporisation d'allumage--------------------------------------------------------
+
 		digitalWrite(relais, HIGH);
-		lcd.noBacklight();    
+		lcd.clear();
+		lcd.setCursor(0,0);
+		lcd.print("   Systeme en");;
+		lcd.setCursor(0,1);
+		lcd.print("     marche");
+		delay(2500);
+		lcd.clear();
+		lcd.setCursor(1,0);
+		lcd.print("Alarme ARDUINO");;
+		lcd.setCursor(0,1);
+		lcd.print("***   v0.1   ***");
+		//delay(5000);
+		//lcd.noBacklight();    
 		}
 		else 
 		{
