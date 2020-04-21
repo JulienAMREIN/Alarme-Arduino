@@ -10,56 +10,53 @@ const int bouton = 4; // le bouton est connecté à la broche 4 de la carte Adru
 
 void setup()
 {
-  pinMode(bouton, INPUT_PULLUP); // le bouton est une entrée 
-  pinMode(relais, OUTPUT); // le relais est une entrée
-  etatBouton = HIGH; // initialise l'état du bouton comme "relaché"  
+	pinMode(bouton, INPUT_PULLUP); // le bouton est une entrée 
+	pinMode(relais, OUTPUT); // le relais est une entrée
+	etatBouton = HIGH; // initialise l'état du bouton comme "relaché"  
   
-  lcd.init(); // initialisation du lcd 
-  lcd.backlight();
-  lcd.setCursor(0,0);
-  lcd.print(" Alarme ARDUINO");
-  lcd.setCursor(0,1);
-  lcd.print("      v0.1");
-  
+	lcd.init(); // initialisation du lcd 
+	lcd.backlight();
+	lcd.setCursor(0,0);
+	lcd.print(" Alarme ARDUINO");
+	lcd.setCursor(0,1);
+	lcd.print("      v0.1");
 }
 
 void loop()
 {
-   etatBouton = digitalRead(bouton); // Lecture de l'état du bouton
+	etatBouton = digitalRead(bouton); // Lecture de l'état du bouton
 
-   if((etatBouton == LOW) && (etatAlarme == 0)) 
-    {
-      lcd.backlight();
-       etatAlarme++;
-     delay(1500);
-     lcd.setCursor(0,1);
-  lcd.print("OFF");
-  digitalWrite(relais, LOW);
-     delay(10000);
-     lcd.noBacklight();
-          
-    }
-    else 
-    {
-if((etatBouton == LOW) && (etatAlarme == 1))
-    {
-     lcd.backlight(); 
-     etatAlarme--;
-     delay(1500);
-     lcd.setCursor(0,1);
-  lcd.print("ON ");
-  delay(10000);
-   digitalWrite(relais, HIGH);
-   lcd.noBacklight();
-     
-          
-    }
-    else 
-    {
-       
-    }
+	if((etatBouton == LOW) && (etatAlarme == 0)) 
+    	{
+		lcd.backlight();
+		etatAlarme++;
+		delay(1500);
+		lcd.setCursor(0,1);
+		lcd.print("OFF");
+		digitalWrite(relais, LOW);
+		delay(10000);
+		lcd.noBacklight();
+	}
+
+	else 
+	{
+		if((etatBouton == LOW) && (etatAlarme == 1))
+		{
+		lcd.backlight(); 
+		etatAlarme--;
+		delay(1500);
+		lcd.setCursor(0,1);
+		lcd.print("ON ");
+		delay(10000);
+		digitalWrite(relais, HIGH);
+		lcd.noBacklight();    
+		}
+		else 
+		{
+	       
+		}
     
-    }
+	}
 
 
 }
