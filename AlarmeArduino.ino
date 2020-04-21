@@ -17,10 +17,10 @@ void setup()
   
 	lcd.init(); // initialisation du lcd 
 	lcd.backlight();
-	lcd.setCursor(0,0);
-	lcd.print(" Alarme ARDUINO");
-	lcd.setCursor(0,1);
-	lcd.print("      v0.1");
+	lcd.setCursor(1,0);
+	lcd.print("Alarme ARDUINO");
+	lcd.setCursor(6,1);
+	lcd.print("v0.1");
 }
 
 void loop()
@@ -36,10 +36,9 @@ void loop()
 		lcd.setCursor(0,0);
 		lcd.print("Arret du systeme");
 		digitalWrite(relais, LOW);
-		delay(3000);
-		lcd.clear();
-		lcd.setCursor(4,0);
-		lcd.print("Arret OK");
+		delay(2000);
+		lcd.setCursor(3,1);
+		lcd.print("*** OK ***");
 		delay(3000);
 		lcd.clear();
 		lcd.setCursor(1,0);
