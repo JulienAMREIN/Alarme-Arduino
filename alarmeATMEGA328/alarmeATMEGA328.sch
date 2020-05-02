@@ -1,0 +1,166 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Screw_Terminal_1x02 J?
+U 1 1 5EACB308
+P 1600 2750
+F 0 "J?" H 1600 3000 50  0000 C TNN
+F 1 "Screw_Terminal_1x02" V 1450 2750 50  0000 C TNN
+F 2 "" H 1600 2525 50  0001 C CNN
+F 3 "" H 1575 2750 50  0001 C CNN
+	1    1600 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transformer_1P_1S T?
+U 1 1 5EACB3C2
+P 2550 2750
+F 0 "T?" H 2550 3000 50  0000 C CNN
+F 1 "Transformer_1P_1S" H 2550 2450 50  0000 C CNN
+F 2 "" H 2550 2750 50  0000 C CNN
+F 3 "" H 2550 2750 50  0000 C CNN
+	1    2550 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L D_Bridge_-A+A D?
+U 1 1 5EACB41F
+P 3650 2750
+F 0 "D?" H 3700 3025 50  0000 L CNN
+F 1 "D_Bridge_-A+A" H 3700 2950 50  0000 L CNN
+F 2 "" H 3650 2750 50  0000 C CNN
+F 3 "" H 3650 2750 50  0000 C CNN
+	1    3650 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C?
+U 1 1 5EACB486
+P 4200 2900
+F 0 "C?" H 4225 3000 50  0000 L CNN
+F 1 "CP" H 4225 2800 50  0000 L CNN
+F 2 "" H 4238 2750 50  0000 C CNN
+F 3 "" H 4200 2900 50  0000 C CNN
+	1    4200 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L LM7812 U?
+U 1 1 5EACB4ED
+P 4800 2800
+F 0 "U?" H 4950 2604 50  0000 C CNN
+F 1 "LM7812" H 4800 3000 50  0000 C CNN
+F 2 "" H 4800 2800 50  0000 C CNN
+F 3 "" H 4800 2800 50  0000 C CNN
+	1    4800 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5EACB560
+P 5400 2900
+F 0 "R?" V 5480 2900 50  0000 C CNN
+F 1 "R" V 5400 2900 50  0000 C CNN
+F 2 "" V 5330 2900 50  0000 C CNN
+F 3 "" H 5400 2900 50  0000 C CNN
+	1    5400 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D?
+U 1 1 5EACB599
+P 5400 3300
+F 0 "D?" H 5400 3400 50  0000 C CNN
+F 1 "LED" H 5400 3200 50  0000 C CNN
+F 2 "" H 5400 3300 50  0000 C CNN
+F 3 "" H 5400 3300 50  0000 C CNN
+	1    5400 3300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L PC817 U?
+U 1 1 5EACB5DE
+P 6200 2800
+F 0 "U?" H 6000 3000 50  0000 L CNN
+F 1 "PC817" H 6200 3000 50  0000 L CNN
+F 2 "DIP-4" H 6000 2600 50  0000 L CIN
+F 3 "" H 6200 2800 50  0000 L CNN
+	1    6200 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L ATMEGA328-P IC?
+U 1 1 5EACB655
+P 9200 3250
+F 0 "IC?" H 8450 4500 50  0000 L BNN
+F 1 "ATMEGA328-P" H 9600 1850 50  0000 L BNN
+F 2 "DIL28" H 9200 3250 50  0000 C CIN
+F 3 "" H 9200 3250 50  0000 C CNN
+	1    9200 3250
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R?
+U 1 1 5EACB8F3
+P 7100 2250
+F 0 "R?" V 7180 2250 50  0000 C CNN
+F 1 "R" V 7100 2250 50  0000 C CNN
+F 2 "" V 7030 2250 50  0000 C CNN
+F 3 "" H 7100 2250 50  0000 C CNN
+	1    7100 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GNDREF #PWR?
+U 1 1 5EACB9AA
+P 7100 3650
+F 0 "#PWR?" H 7100 3400 50  0001 C CNN
+F 1 "GNDREF" H 7100 3500 50  0000 C CNN
+F 2 "" H 7100 3650 50  0000 C CNN
+F 3 "" H 7100 3650 50  0000 C CNN
+	1    7100 3650
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
