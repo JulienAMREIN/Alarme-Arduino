@@ -298,7 +298,7 @@ Wire Wire Line
 Wire Wire Line
 	7750 2550 7750 2950
 Connection ~ 7100 2950
-Text Label 7100 2350 0    60   ~ 0
+Text Label 7100 2300 0    60   ~ 0
 +5v-ATMEGA328P
 Text Label 10100 4350 0    60   ~ 0
 +5v-ATMEGA328P
@@ -306,4 +306,6 @@ Text Label 7100 3650 0    60   ~ 0
 GND-ATMEGA328P
 Text Label 10100 2050 0    60   ~ 0
 GND-ATMEGA328P
+Text Notes 7600 2600 0    60   ~ 0
+Digital PIN 2
 $EndSCHEMATC
